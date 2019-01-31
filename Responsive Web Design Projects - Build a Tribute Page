@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt br">
+    <head>
+        <title>Andrews Drein</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </head>
+    
+    <style>
+        html, body {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            text-align: center;
+            color: #333;
+            min-width: 260px;
+        }
+        
+    
+        .title {
+            background: gray;
+            line-height: 100px;
+            transform: skewY(-5deg);
+        }
+              
+        .imagem {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+        
+        .article01 {
+            background: gray
+        }
+        
+        #headline {
+            margin-top: 50px;
+        }
+        
+
+    </style>
+    
+    <body class="container">
+        <nav>
+    
+        </nav>
+    
+        <header>
+            <h1 id="title" class="title">Andrews H. Drein</h1>
+            <h2>Analista de Sistemas</h2>
+            <div id="img-div">
+                <figure>
+                    <img src="./images/download.jpg" alt="" class="imagem" id="image">
+                    <figcaption id="img-caption">Freecamp Code Training by Andrews Drein</figcaption>
+                </figure>
+            </div>
+        </header>
+        
+        <main id="main">
+       
+            <article class="article01">
+                <div id="tribute-info">
+
+                    <ul>
+                        <h3 id="headline">Here's a time line of Dr. Borlaug's life:</h3>
+                        <li>
+                            <strong>1914</strong> - Born in Cresco, Iowa
+                        </li>
+                        <li>
+                            <strong>1914</strong> - Born in Cresco, Iowa
+                        </li>
+                        <li>
+                            <strong>1914</strong> - Born in Cresco, Iowa
+                        </li>
+                        <li>
+                            <strong>1914</strong> - Born in Cresco, Iowa
+                        </li>
+                        <li>
+                            <strong>1914</strong> - Born in Cresco, Iowa
+                        </li>
+                    </ul>
+                    <blockquote>
+                      <p>"Borlaug's life and achievement are testimony to the far-reaching contribution that one man's towering intellect, persistence and scientific vision can make to human peace and progress."</p>
+                      <div>-- Indian Prime Minister Manmohan Singh</div>
+                    </blockquote>
+                    <h3>If you have time, you should read more about this incredible human being on his 
+                    <a id="tribute-link" href="https://en.wikipedia.org/wiki/Norman_Borlaug" target="_blank">Wikipedia entry
+                    </a>.</h3>
+                    
+                </div>
+
+
+            </article>
+
+        </main>
+
+        
+        <footer>Create By Andrews</footer>
+
+    </body>
+    
+
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js')
+          .then(function(registration) {
+            console.log('Registration successful, scope is:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('Service worker registration failed, error:', error);
+          });
+        } else {
+          console.log('Service workers are not supported.');
+        }
+    </script>
+</html>
