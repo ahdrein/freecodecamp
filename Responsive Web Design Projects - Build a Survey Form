@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt br">
+    <head>
+        <title>Andrews Drein</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+        <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </head>
+    
+    <style>
+        html, body {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            text-align: center;
+            color: #333;
+            min-width: 260px;
+            background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+        }
+        
+        h1 {
+            font-family: Lobster, monospace;
+        }
+      
+        .form-survey {
+            background-color: #DAC7FF;
+            border-radius: 25px;
+            width: 70%;
+            height: 400px;
+            margin: 50px auto;
+            padding: 1.5em;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr 50px) 20px;
+        }
+        
+        .grid-survey {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            justify-items: left;
+            grid-gap: 10px;
+            grid-template-areas:
+                  "content content"
+                  "content content"
+                  "content content";
+        }
+        
+        input {
+            border-radius: 10px;
+        }
+        
+        footer {
+            background-color: #09A7A1;
+            color: white;
+            padding: 0.5em;
+        }
+        
+        .rowTab {
+                display: block;
+        }
+
+    </style>
+    
+    <body class="container">
+        <nav>
+    
+        </nav>
+    
+        <header>
+            <h1 id="title">Survey Form by Andrews H. Drein</h1>
+        </header>
+        
+        <main id="main">
+       
+            <article style="text-align: center; ">
+                <h3 id="description">Let us know how we can improve freeCodeCamp</h3>
+                <div class="form-survey">
+
+                    
+                    
+                    <form id="survey-form" action="/submit">
+                        <div class="grid-survey">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Name">
+                            
+                            
+
+                            <input type="radio" name="indoor-outdoor">
+                            <label> Outdoor</label>
+                            
+                            
+                            
+                            <label><input type="checkbox" name="personality" checked> Loving</label>
+                            <label><input type="checkbox" name="personality"> Lazy</label>
+                            <label><input type="checkbox" name="personality"> Energetic</label><br>
+                            
+                            <input type="text" placeholder="cat photo URL" required>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                        
+                    
+                    
+                </div>
+
+
+            </article>
+
+        </main>
+
+        
+        <footer>Create by Andrews</footer>
+
+    </body>
+    
+
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/service-worker.js')
+          .then(function(registration) {
+            console.log('Registration successful, scope is:', registration.scope);
+          })
+          .catch(function(error) {
+            console.log('Service worker registration failed, error:', error);
+          });
+        } else {
+          console.log('Service workers are not supported.');
+        }
+    </script>
+</html>
