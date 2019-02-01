@@ -21,33 +21,26 @@
         h1 {
             font-family: Lobster, monospace;
         }
+
+        textarea {
+            font-family: monospace;
+            border-color: rgb(169, 169, 169);
+        }
       
         .form-survey {
             background-color: #DAC7FF;
             border-radius: 25px;
-            width: 70%;
-            height: 400px;
+            width: 50%;
+            height: auto;
             margin: 50px auto;
             padding: 1.5em;
             text-align: center;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr 50px) 20px;
         }
         
-        .grid-survey {
-            width: 100%;
-            display: grid;
-            grid-template-columns: auto 1fr;
-            justify-items: left;
-            grid-gap: 10px;
-            grid-template-areas:
-                  "content content"
-                  "content content"
-                  "content content";
-        }
         
-        input {
-            border-radius: 10px;
+        input, select {
+            border-radius: 5px;
+            height: 20px;
         }
         
         footer {
@@ -57,9 +50,54 @@
         }
         
         .rowTab {
-                display: block;
+           display: block;
+           
+        }
+        
+        .labels {
+            display: inline-block;
+            text-align: right;
+            height: 35px;
+            width: 40%;
+            padding: 5px;
+            vertical-align: top;
+            margin-top: 10px;
+        }
+        
+        
+        .rightTab {
+            display: inline-block;
+            text-align: left;
+            width: 48%;
+            vertical-align: middle;
+            margin-top: 10px;
         }
 
+
+        .dropdown {
+            height: 35px;
+            width: 140px;
+            padding: 5px;
+            margin: 10px;
+            margin-top: 15px;
+            border: 1px solid #c0c0c0;
+            border-radius: 2px;
+        }
+
+        .input-field {
+            height: 50px;
+            resize: vertical;
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid #c0c0c0;
+            border-radius: 2px;
+        }
+
+        @media screen and (max-width: 830px) {
+            .input-field {
+                width: 80%
+            }
+        }
     </style>
     
     <body class="container">
@@ -73,48 +111,116 @@
         
         <main id="main">
        
-            <article style="text-align: center; ">
-                <h3 id="description">Let us know how we can improve freeCodeCamp</h3>
+            <article>
+                <p id="description">Let us know how we can improve freeCodeCamp</p>
                 <div class="form-survey">
 
-                    
-                    
                     <form id="survey-form" action="/submit">
-                        <div class="grid-survey">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="name" placeholder="Name">
+                        <div >
+                            <div class="rowTab">
+                                <div class="labels">
+                                    <label for="name" id="name-label">* Name</label>
+                                </div>
+                                <div class="rightTab">
+                                    <input type="text" name="name" id="name" placeholder="Name" required>
+                                </div>
+                            </div>
                             
+                            <div class="rowTab">
+                                <div class="labels">
+                                    <label for="email" id="email-label">* E-mail</label>
+                                </div>
+                                <div class="rightTab">
+                                    <input type="email" name="email" id="email" placeholder="E-mail" required>
+                                </div>
+                            </div>
                             
+                            <div class="rowTab">
+                                <div class="labels">
+                                    <label for="age" id="number-label">* Age</label>
+                                </div>
+                                <div class="rightTab">
+                                    <input type="number" name="age" id="number" placeholder="Age" min="0" max="50" required>
+                                </div>
+                            </div>
+                            
+                            <div class="rowTab">
+                              <div class="labels">
+                                <label for="currentPos">Which option best describes your current role?</label>
+                              </div>
+                              <div class="rightTab">
+                                <select id="dropdown" name="currentPos" class="dropdown">
+                                  <option disabled="" value="">Select an option</option>
+                                  <option value="student">Student</option>
+                                  <option value="job">Full Time Job</option>
+                                  <option value="learner">Full Time Learner</option>
+                                  <option value="preferNo">Prefer not to say</option>
+                                  <option value="other">Other</option>
+                                </select>
+                              </div>
+                            </div>
+                            
+                            <div class="rowTab">
+                              <div class="labels">
+                                <label for="userRating">* How likely is that you would recommend freeCodeCamp to a friend?</label>
+                              </div>
+                              <div class="rightTab">
+                                <ul style="list-style: none;">
+                                  <li class="radio"><label>Definitely<input name="radio-buttons" value="1" type="radio" class="userRatings"></label></li>
+                                  <li class="radio"><label>Maybe<input name="radio-buttons" value="2" type="radio" class="userRatings"></label></li>
+                                  <li class="radio"><label>Not sure<input name="radio-buttons" value="3" type="radio" class="userRatings"></label></li>
+                                </ul>
+                              </div>
+                            </div>
+                                                        
+                            
+                            <div class="rowTab">
+                                <div class="labels">
+                                    <label for="personality">Loving</label>
+                                </div>
+                                <div class="rightTab">
+                                    <input type="checkbox" name="personality" value="1" checked>
+                                </div>
 
-                            <input type="radio" name="indoor-outdoor">
-                            <label> Outdoor</label>
+                                <div class="labels">
+                                        <label for="personality">Lazy</label>
+                                    </div>
+                                <div class="rightTab">
+                                    <input type="checkbox" name="personality" value="2">
+                                </div>
+
+                                <div class="labels">
+                                    <label for="personality">Energetic</label>
+                                </div>
+                                <div class="rightTab">
+                                    <input type="checkbox" name="personality" value="3">
+                                </div>
+                            </div>
+
+
+                            <div class="rowTag">
+                                <div class="labels">
+                                    <label for="">Any Comments or Suggestions?</label>
+                                </div>
+                                <div class="rightTab">
+                                    <textarea id="textarea" class="input-field" placeholder="Enter your comment here......">
+                                        Enter your comment here......
+                                    </textarea>
+                                </div>
+                            </div>
                             
-                            
-                            
-                            <label><input type="checkbox" name="personality" checked> Loving</label>
-                            <label><input type="checkbox" name="personality"> Lazy</label>
-                            <label><input type="checkbox" name="personality"> Energetic</label><br>
-                            
-                            <input type="text" placeholder="cat photo URL" required>
                         </div>
-                        <button type="submit">Submit</button>
+                        <button type="submit" id="submit">Submit</button>
                     </form>
-                        
-                    
-                    
+                   
                 </div>
-
-
             </article>
 
         </main>
-
-        
+       
         <footer>Create by Andrews</footer>
 
     </body>
-    
-
     
     <script>
         if ('serviceWorker' in navigator) {
